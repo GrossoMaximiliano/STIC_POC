@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#00652D">
+  <title>STIC · App de Socios</title>
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%2300652D"/><text x="32" y="41" font-family="Arial" font-size="20" font-weight="700" fill="white" text-anchor="middle">STIC</text></svg>'>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ Íconos SVG ============ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 9.8V21h14V9.8"/><path d="M10 21v-6h4v6"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12"/><path d="M12 8c-1.5-4-6-4-6-1.5S10 8 12 8zm0 0c1.5-4 6-4 6-1.5S14 8 12 8z"/></symbol>
+    <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="11" r="2"/><path d="M5.6 16.2c.5-1.7 5.3-1.7 5.8 0M14.5 10h4M14.5 14h3"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21c0-4 3.5-6.2 7.5-6.2s7.5 2.2 7.5 6.2"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 1112 0v5l1.7 2.6H4.3z"/><path d="M10 21a2.3 2.3 0 004 0"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5L16.2 16.2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-chev-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13.5 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9.5 4H5v16h4.5M14.5 8l4 4-4 4M8.5 12h10"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h3.5v3.5H14zM20 14v2.5M16.5 20H20M14 19.5v.5"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h9"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.3v.2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 2.8V11c0 4.8-3.4 8.3-7 9.8-3.6-1.5-7-5-7-9.8V5.8z"/><path d="M9 12l2.2 2.2L15.5 9.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21S5.5 15.6 5.5 11a6.5 6.5 0 0113 0c0 4.6-6.5 10-6.5 10z"/><circle cx="12" cy="10.8" r="2.3"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l1.7 4.6L8.3 10a12.5 12.5 0 006 6l1.4-2.4L20 15v4a2 2 0 01-2.2 2A15.8 15.8 0 013 6.2 2 2 0 015 4z"/></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 7h18v3.5a2.5 2.5 0 000 5V19H3v-3.5a2.5 2.5 0 000-5z"/><path d="M15 7v12" stroke-dasharray="2 2.6"/></symbol>
+    <symbol id="i-percent" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="7.5" cy="7.5" r="2.6"/><circle cx="16.5" cy="16.5" r="2.6"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M5 4a1 1 0 011-1h11l3 3v14a1 1 0 01-1 1H6a1 1 0 01-1-1z"/><path d="M17 3v4h3M9 12h6M9 15.5h4.5"/></symbol>
+    <symbol id="i-futbol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.7"/><path d="M12 8l3.4 2.4-1.3 4h-4.2l-1.3-4z"/><path d="M12 8V3.5M15.4 10.4l4.6-1.4M14.1 14.4l2.9 3.9M9.9 14.4l-2.9 3.9M8.6 10.4L4 9"/></symbol>
+    <symbol id="i-padel" viewBox="0 0 24 24"><circle cx="9.8" cy="9.8" r="6.3"/><path d="M14.4 14.4L21 21"/><path d="M7 9.8h5.6M9.8 7v5.6"/></symbol>
+    <symbol id="i-tenis" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.7"/><path d="M5.2 5.2c3 2.6 3 11 0 13.6M18.8 5.2c-3 2.6-3 11 0 13.6"/></symbol>
+    <symbol id="i-pool" viewBox="0 0 24 24"><path d="M3 9c2 0 2.4 1.5 4.5 1.5S10 9 12 9s2.4 1.5 4.5 1.5S19 9 21 9M3 15c2 0 2.4 1.5 4.5 1.5S10 15 12 15s2.4 1.5 4.5 1.5S19 15 21 15"/></symbol>
+    <symbol id="i-gym" viewBox="0 0 24 24"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9.2v5.6M20.5 9.2v5.6M6.5 12h11"/></symbol>
+    <symbol id="i-grill" viewBox="0 0 24 24"><path d="M4 10a8 8 0 0116 0z"/><path d="M4 10h16M6 14l-1.5 7M18 14l1.5 7"/><path d="M9 6.4V10M12 5.2V10M15 6.4V10"/></symbol>
+  </svg>
+
+  <div class="app" id="app">
+
+    <!-- ============ 1 · LOGIN ============ -->
+    <section class="view view-login active" id="view-login">
+      <div class="login-wrap">
+        <div class="login-brand">
+          <div class="logo-badge">STIC</div>
+          <h1>App de Socios</h1>
+          <p>Sindicato de Trabajadores de la<br>Industria del Cuero</p>
+        </div>
+        <form class="login-card" id="login-form" novalidate>
+          <h2>Ingresar</h2>
+          <div class="field">
+            <label for="login-dni">DNI</label>
+            <input id="login-dni" inputmode="numeric" autocomplete="username" placeholder="Ingresá tu DNI">
+          </div>
+          <div class="field">
+            <label for="login-pass">Contraseña</label>
+            <input id="login-pass" type="password" autocomplete="current-password" placeholder="Tu contraseña">
+          </div>
+          <p class="form-error" id="login-error" hidden>Completá tu DNI y contraseña para ingresar.</p>
+          <button class="btn btn-primary btn-block" type="submit">Ingresar</button>
+          <button class="btn btn-demo btn-block" type="button" id="login-demo">Explorar en modo demo</button>
+          <button class="login-help" type="button" id="login-forgot">¿Olvidaste tu contraseña?</button>
+        </form>
+        <p class="login-foot">Mock de validación · Sin datos reales</p>
+      </div>
+    </section>
+
+    <!-- ============ 2 · HOME ============ -->
+    <section class="view" id="view-home">
+      <header class="hero">
+        <div class="hero-top">
+          <div class="hero-user">
+            <div class="avatar" id="home-avatar">JP</div>
+            <div>
+              <p class="hero-hi">Hola,</p>
+              <h2 id="home-name">Juan Pérez</h2>
+            </div>
+          </div>
+          <button class="hero-bell" id="btn-bell" aria-label="Notificaciones">
+            <svg class="ic"><use href="#i-bell"/></svg>
+          </button>
+        </div>
+        <div class="hero-chip" id="home-cuota"></div>
+      </header>
+      <div class="page">
+        <div class="quick">
+          <button data-go="view-facilities"><span class="qa-icon"><svg class="ic"><use href="#i-calendar"/></svg></span>Reservar</button>
+          <button data-go="view-benefits"><span class="qa-icon"><svg class="ic"><use href="#i-gift"/></svg></span>Beneficios</button>
+          <button data-go="view-carnet"><span class="qa-icon"><svg class="ic"><use href="#i-id"/></svg></span>Carnet</button>
+          <button data-go="view-mybookings"><span class="qa-icon"><svg class="ic"><use href="#i-clock"/></svg></span>Mis turnos</button>
+        </div>
+
+        <div class="section-head">
+          <h3>Próximos turnos</h3>
+          <button class="link" data-go="view-mybookings">Ver todas <svg class="ic ic-xs"><use href="#i-chev-right"/></svg></button>
+        </div>
+        <div id="home-bookings"></div>
+
+        <div class="section-head">
+          <h3>Beneficios para socios</h3>
+          <button class="link" data-go="view-benefits">Ver todas <svg class="ic ic-xs"><use href="#i-chev-right"/></svg></button>
+        </div>
+        <div class="hscroll noscroll" id="home-benefits"></div>
+      </div>
+    </section>
+
+    <!-- ============ 3 · RESERVAS · INSTALACIONES ============ -->
+    <section class="view" id="view-facilities">
+      <header class="appbar">
+        <h1>Reservar turno</h1>
+      </header>
+      <div class="page">
+        <p class="page-intro">Elegí la instalación y buscá el horario que mejor te quede.</p>
+        <div class="stack" id="fac-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ 4 · RESERVAS · FECHA Y HORARIO ============ -->
+    <section class="view" id="view-slots">
+      <header class="appbar">
+        <button class="back" data-back aria-label="Volver"><svg class="ic"><use href="#i-chev-left"/></svg></button>
+        <div class="appbar-col">
+          <h1 id="slots-title">—</h1>
+          <p class="appbar-sub" id="slots-sub"></p>
+        </div>
+      </header>
+      <div class="page">
+        <div class="daystrip noscroll" id="daystrip"></div>
+        <div class="legend">
+          <span><i class="dot dot-av"></i>Disponible</span>
+          <span><i class="dot dot-oc"></i>Ocupado</span>
+          <span><i class="dot dot-mine"></i>Mi turno</span>
+        </div>
+        <div class="slotgrid" id="slotgrid"></div>
+        <p class="hint" id="slots-hint"></p>
+      </div>
+    </section>
+
+    <!-- ============ 6 · MIS RESERVAS ============ -->
+    <section class="view" id="view-mybookings">
+      <header class="appbar">
+        <button class="back" data-back aria-label="Volver"><svg class="ic"><use href="#i-chev-left"/></svg></button>
+        <h1>Mis reservas</h1>
+      </header>
+      <div class="page">
+        <div class="tabs">
+          <button class="tab active" data-tab="proximas">Próximas</button>
+          <button class="tab" data-tab="historial">Historial</button>
+        </div>
+        <div class="stack" id="bookings-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ 7 · BENEFICIOS ============ -->
+    <section class="view" id="view-benefits">
+      <header class="appbar">
+        <h1>Beneficios</h1>
+      </header>
+      <div class="page">
+        <div class="search">
+          <svg class="ic ic-sm"><use href="#i-search"/></svg>
+          <input id="benefit-search" placeholder="Buscar beneficio o comercio" autocomplete="off">
+        </div>
+        <div class="hscroll chips noscroll" id="benefit-cats"></div>
+        <div class="stack" id="benefit-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ 7b · BENEFICIO · DETALLE ============ -->
+    <section class="view" id="view-benefit-detail">
+      <header class="appbar">
+        <button class="back" data-back aria-label="Volver"><svg class="ic"><use href="#i-chev-left"/></svg></button>
+        <h1>Detalle del beneficio</h1>
+      </header>
+      <div class="page" id="benefit-detail-body"></div>
+    </section>
+
+    <!-- ============ 8 · CARNET DIGITAL ============ -->
+    <section class="view" id="view-carnet">
+      <header class="appbar">
+        <h1>Carnet digital</h1>
+      </header>
+      <div class="page">
+        <div class="credential">
+          <div class="cred-top">
+            <span class="cred-brand">STIC</span>
+            <span class="cred-status">SOCIO ACTIVO</span>
+          </div>
+          <div class="cred-main">
+            <div class="avatar avatar-lg" id="cred-avatar">JP</div>
+            <div class="cred-info">
+              <h2 id="cred-name">—</h2>
+              <p id="cred-dni">—</p>
+              <p id="cred-nro">—</p>
+            </div>
+          </div>
+          <div class="cred-bottom">
+            <button class="cred-qr" id="btn-qr-big" aria-label="Ampliar QR"></button>
+            <div class="cred-cuota">
+              <svg class="ic"><use href="#i-shield"/></svg>
+              <div>
+                <b id="cred-cuota-estado">—</b>
+                <span id="cred-cuota-vence">—</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card actions-stack">
+          <button class="btn btn-ghost btn-block" id="btn-qr-big-2">
+            <svg class="ic ic-sm"><use href="#i-qr"/></svg> Ampliar código QR
+          </button>
+          <button class="btn btn-outline btn-block" id="btn-call">
+            <svg class="ic ic-sm"><use href="#i-phone"/></svg> Llamar a la sede
+          </button>
+        </div>
+        <p class="hint center">Presentá tu carnet digital para ingresar a las instalaciones y validar beneficios.</p>
+      </div>
+    </section>
+
+    <!-- ============ 9 · PERFIL ============ -->
+    <section class="view" id="view-profile">
+      <header class="appbar">
+        <h1>Mi perfil</h1>
+      </header>
+      <div class="page">
+        <div class="card profile-card">
+          <div class="avatar avatar-lg" id="prof-avatar">JP</div>
+          <div class="profile-meta">
+            <h3 id="prof-name">—</h3>
+            <p id="prof-email">—</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4 class="card-title">Datos del socio</h4>
+          <div class="rows">
+            <div class="row"><span>DNI</span><b id="prof-dni">—</b></div>
+            <div class="row"><span>N° de socio</span><b id="prof-nro">—</b></div>
+            <div class="row"><span>Teléfono</span><b id="prof-tel">—</b></div>
+            <div class="row"><span>Email</span><b id="prof-mail">—</b></div>
+            <div class="row"><span>Sede</span><b id="prof-sede">—</b></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4 class="card-title">Preferencias</h4>
+          <div class="trow">
+            <div class="trow-txt"><b>Notificaciones push</b><span>Recordatorios de turnos y novedades</span></div>
+            <button class="toggle on" data-toggle aria-pressed="true" aria-label="Notificaciones push"></button>
+          </div>
+          <div class="trow">
+            <div class="trow-txt"><b>Novedades por email</b><span>Beneficios y comunicados del sindicato</span></div>
+            <button class="toggle" data-toggle aria-pressed="false" aria-label="Novedades por email"></button>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="lrow" data-toast="En el sistema real abriría los términos y condiciones (mock).">
+            <svg class="ic ic-sm"><use href="#i-doc"/></svg> Términos y condiciones <svg class="ic ic-sm lrow-chev"><use href="#i-chev-right"/></svg>
+          </button>
+          <button class="lrow" data-toast="Centro de ayuda (mock). En producción: FAQ y WhatsApp de soporte.">
+            <svg class="ic ic-sm"><use href="#i-info"/></svg> Centro de ayuda <svg class="ic ic-sm lrow-chev"><use href="#i-chev-right"/></svg>
+          </button>
+        </div>
+
+        <button class="btn btn-outline btn-block btn-logout" id="btn-logout">
+          <svg class="ic ic-sm"><use href="#i-logout"/></svg> Cerrar sesión
+        </button>
+        <p class="hint center">STIC · App de Socios · v0.1 (mock)</p>
+      </div>
+    </section>
+
+    <!-- ============ Bottom nav ============ -->
+    <nav class="bottomnav" id="bottomnav" aria-label="Navegación principal">
+      <button data-view="view-home"><svg class="ic"><use href="#i-home"/></svg>Inicio</button>
+      <button data-view="view-facilities"><svg class="ic"><use href="#i-calendar"/></svg>Reservas</button>
+      <button data-view="view-benefits"><svg class="ic"><use href="#i-gift"/></svg>Beneficios</button>
+      <button data-view="view-carnet"><svg class="ic"><use href="#i-id"/></svg>Carnet</button>
+      <button data-view="view-profile"><svg class="ic"><use href="#i-user"/></svg>Perfil</button>
+    </nav>
+  </div>
+
+  <!-- ============ Overlays ============ -->
+  <div class="backdrop" id="backdrop"></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true"></div>
+  <div class="modal" id="modal" role="dialog" aria-modal="true"><div class="modal-card" id="modal-card"></div></div>
+  <div class="toast" id="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
